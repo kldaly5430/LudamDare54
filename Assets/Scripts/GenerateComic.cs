@@ -8,6 +8,12 @@ public class GenerateComic : MonoBehaviour
 {
 
     private double[] comicGrade = new double[]{0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.5,8.0,8.5,9.0,9.2,9.4,9.6,9.8,9.9,10.0};
+    public TextAsset horrorWordsText;
+    public TextAsset mysteryWordsText;
+    public TextAsset adventureWordsText;
+    public TextAsset scifiWordsText;
+    public TextAsset childWordsText;
+    public TextAsset superheroWordsText;
     public string horrorWords;
     public string mysteryWords;
     public string adventureWords;
@@ -26,12 +32,12 @@ public class GenerateComic : MonoBehaviour
     void Awake()
     {
         comicStore = GameObject.Find("Main Camera").GetComponent<ComicStore>();
-        horrorWords = File.ReadAllText("Assets/Resources/HorrorWords.txt");
-        mysteryWords = File.ReadAllText("Assets/Resources/mysteryWords.txt");
-        adventureWords = File.ReadAllText("Assets/Resources/adventureWords.txt");
-        scifiWords = File.ReadAllText("Assets/Resources/scifiWords.txt");
-        childWords = File.ReadAllText("Assets/Resources/childrensWord.txt");
-        superheroWords = File.ReadAllText("Assets/Resources/superheroWords.txt");
+        horrorWords = horrorWordsText.text;
+        mysteryWords = mysteryWordsText.text;
+        adventureWords = adventureWordsText.text;
+        scifiWords = scifiWordsText.text;
+        childWords = childWordsText.text;
+        superheroWords = superheroWordsText.text;
     }
 
     // Update is called once per frame
